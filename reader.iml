@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="okhttp-3.11.0" level="project" />
-    <orderEntry type="library" name="okio-2.1.0" level="project" />
-    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
-  </component>
-</module>
+public class Main {
+
+    private final static String bookName = "校花的贴身高手";
+    private final static String savePath = "/Users/jiangzilai/Documents/book";
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        FastDownloader downloader = new Bishenge(bookName, "http://www.bishenge.com/1_1693/", savePath);
+
+        //下载epub格式，自动生成索引
+        downloader.downloadEPUB();
+    }
+}
